@@ -1,24 +1,17 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+
 class App extends Component{
+  state = {
+    name: "Jay Prakash",
+    newName: this.props.name
+
+  }
   render(){
     return(
-    <div className="App">
-      <header className="App-header">        
-        <p>
-          My Name is Jay Prakash!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <h1>Hello {this.state.name} and new name is {this.state.newName}</h1>
     )
   }
 }
-export default App;
+
+export default App
+ 
