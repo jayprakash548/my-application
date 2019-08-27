@@ -1,16 +1,32 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const App = () =>{
-  let handlieClick = (e)=>{
-    //e.preventDefault();
-    console.log("You Clicked");
+class App extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      name: 'Jay Prakash',
+      roll: this.props.roll
+    }
   }
-  return(
-    <>
-      <h1>Hello Jay</h1>
-      <a href="https://www.google.com/" onClick={handlieClick}>Click Me</a>
-    </>
-  )
+  eventHandler = ()=>{
+    /* this.setState(
+      {
+        name: 'Sony', 
+        roll:'567'
+      }
+    ); */
+    this.setState((state, props) =>{
+      // console.log(state.name);
+      console.log(props.roll);
+    });
+  }
+  render(){
+    return(
+      <>
+        <h1>Event Example {this.state.name} and you roll is: {this.state.roll}</h1>
+        <button onClick={this.eventHandler}>Click Me</button>
+      </>
+    );
+  }
 }
-
 export default App;
