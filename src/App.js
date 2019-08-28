@@ -1,32 +1,27 @@
 import React, { Component } from 'react'
 
 class App extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      name: 'Jay Prakash',
-      roll: this.props.roll
-    }
+  state= {
+    id: 1,
+    name: "Jay Prakash"
   }
-  eventHandler = ()=>{
-    /* this.setState(
-      {
-        name: 'Sony', 
-        roll:'567'
-      }
-    ); */
-    this.setState((state, props) =>{
-      // console.log(state.name);
-      console.log(props.roll);
-    });
+  click=(id, f, g)=>{
+    console.log("You Clicked", id);
+    console.log("Events", f);
+    console.log("Value", g);
   }
+ /*  handClickArg = (f)=>{  
+    this.click(this.state.id, f, '110')
+  }; */
   render(){
     return(
       <>
-        <h1>Event Example {this.state.name} and you roll is: {this.state.roll}</h1>
-        <button onClick={this.eventHandler}>Click Me</button>
+      <h1>Hanle Click:{this.state.name} </h1>
+      <button onClick={this.handClickArg=(f)=>{  
+    this.click(this.state.id, f, '110')
+  }}>Click Me</button>
       </>
-    );
+    )
   }
 }
 export default App;
